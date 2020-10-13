@@ -46,7 +46,7 @@ command:\
 6. done.
 
 # Project Structure
-
+```
 functions
 |-- constatns
 |-- helpers
@@ -71,3 +71,4 @@ functions
     |-- v3
     ...
 |-- index.js (instance the main express and register each version module here)
+```
