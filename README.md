@@ -4,7 +4,9 @@
 
 # API Template by Cloud Function + Express
 Hi,
-This repository is cloud function template with express js framework. Follow these instructions to setup.
+This repository is cloud function template with express js framework.\
+We use firebase hosting to put the Open Api 3.0 (Swagger 3.0) [link](https://cloud-function-template.web.app/docs/).
+If you wanna use this template, please follow these instructions.
 
 ## Required Step
 
@@ -34,7 +36,7 @@ command:\
 6. If you wanna use airbnb eslint style
    - install the dependecies\
       command:\
-      npm: `npx install-peerdeps --dev eslint-config-airbnb`\
+      npm: `npx install-peerdeps --dev eslint-config-airbnb`
    - Change .eslintrc.json like below code\
 `
 {
@@ -45,7 +47,7 @@ command:\
 5. Replace your `index.js` with `functions/index.js` which this project own
 6. done.
 
-# Project Structure
+## Project Structure
 ```
 |-- .firebaserc (firebase project name)
 |-- firebase.json
@@ -81,3 +83,9 @@ command:\
         |-- swagger.json (api documentation)
         |-- index.html
 ```
+
+## Manual Deployment
+To deploy firebase function or hosting, you can use these command\
+deploy only function: `firebase deploy --only function`\
+deploy only hosting: `firebase deploy --only hosting`\
+deploy function and hosting: `firebase deploy`
