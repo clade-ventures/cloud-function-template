@@ -48,26 +48,26 @@ command:\
 # Project Structure
 
 functions
-├── constatns
-├── helpers
-    ├── errors
-    ├── response
-    ├── database.js (this database use realtime database)
-    ├── utilites
-    ├── validator
-  ├── modules
-    ├── v1
-      ├── [your module]
-        ├── controller
-            ├── create.js (put your api which related about create the data into this)
-            ├── read.js (put your api which related with get the data into this)
-            ├── update.js (put your api which related with update the data into this)
-            ├── delete.js (put your api which related with delete the data into this)
-        ├── route.js (define the routes for the module)
-        ├── index.js (export the route)
+|-- constatns
+|-- helpers
+    |-- errors
+    |-- response
+    |-- database.js (this database use realtime database)
+    |-- utilites
+    |-- validator
+|-- modules
+    |-- v1
+      |-- [your module]
+        |-- controller
+            |-- create.js (put your api which related about create the data into this)
+            |-- read.js (put your api which related with get the data into this)
+            |-- update.js (put your api which related with update the data into this)
+            |-- delete.js (put your api which related with delete the data into this)
+        |-- route.js (define the routes for the module)
+        |-- index.js (export the route)
       ...
-      ├── index.js (instance the express and register each module inside this version here)
-    ├── v2
-    ├── v3
+      |-- index.js (instance the express and register each module inside this version here)
+    |-- v2
+    |-- v3
     ...
-  ├── index.js (instance the main express and register each version module here)
+|-- index.js (instance the main express and register each version module here)
