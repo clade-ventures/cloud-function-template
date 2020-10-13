@@ -74,11 +74,10 @@
                 "title": "Book schema object",
                 "required": ["name"],
                 "properties": {
-                    "id": {
-                        "type": "integer",
-                        "format": "int32",
-                        "description": "Id of book",
-                        "example": "1"
+                    "code": {
+                        "type": "string",
+                        "description": "Code of book",
+                        "example": "B001"
                     },
                     "name": {
                         "type": "string",
