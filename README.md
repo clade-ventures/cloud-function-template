@@ -41,7 +41,7 @@ command:\
   "extends": ["airbnb"]
 }
 `
-4. Copy "constants", "helpers", "modules", "swagger" directory into functions directory
+4. Copy "constants", "helpers", "modules" directory into functions directory
 5. Replace your `index.js` with `functions/index.js` which this project own
 6. done.
 
@@ -61,6 +61,7 @@ command:\
         |-- v1
         |-- [your module]
             |-- controller
+                |-- index.js ( export all function in create.js, read.js, update.js and delete.js here)
                 |-- create.js (put your api which related about create the data into this)
                 |-- read.js (put your api which related with get the data into this)
                 |-- update.js (put your api which related with update the data into this)
