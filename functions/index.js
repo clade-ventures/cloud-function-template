@@ -4,8 +4,8 @@ const express = require('express');
 const compression = require('compression')();
 const cors = require('cors')({ origin: true });
 
-const responses = require('./helpers/response');
 const errors = require('./helpers/errors');
+const { errorHandler } = require('./helpers/utilities');
 
 const api = express();
 api.use(cors);
@@ -24,17 +24,6 @@ api.use((req, res, next) => {
 });
 
 // eslint-disable-next-line no-unused-vars
-api.use((err, req, res, next) => {
-  const appErrors = [];
-  const data = err.errors;
-  if (Array.isArray(data)) {
-    for (let i = 0; i < data.length; i += 1) {
-      appErrors.push(data[i].data);
-    }
-  } else {
-    appErrors.push(data ? data.data : err.message);
-  }
-  responses.httpResponse.errorHandler(res, err.status || 500, appErrors);
-});
+api.use((err, req, res, next) => errorHandler(err, res));
 
 exports.api = functions.https.onRequest(api);
