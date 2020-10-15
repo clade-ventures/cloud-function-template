@@ -75,6 +75,13 @@ command:\
         |-- v2
         |-- v3
         ...
+    |-- test
+        |-- offline (offline test)
+           |-- http (http request test)
+           |-- unit (unit test)
+        |-- online (the test which will interact with Firebase account, create/destroy data)
+           |-- http (http request test)
+           |-- unit (unit test)
     |-- index.js (instance the main express and register each version module here)
 |-- public
     |-- index.html
@@ -89,3 +96,17 @@ To deploy firebase function or hosting, you can use these command\
 deploy only function: `firebase deploy --only function`\
 deploy only hosting: `firebase deploy --only hosting`\
 deploy function and hosting: `firebase deploy`
+
+## Testing
+To run the test, you use these command\
+To run all test: `"test:all": "mocha modules/*.test.js"`\
+To run in ci cd: `"test:ci": "npm install && npm run test:offline"`\
+To run all offline test: `"test:offline": "mocha modules/**/offline/**/*.test.js"`\
+To run all offline http test: `"test:offline:http": "mocha modules/**/offline/http/*.test.js"`\
+To run all offline unit test: `"test:offline:unit": "mocha modules/**/offline/unit/*.test.js"`\
+To run all online test: `"test:online": "mocha modules/**/online/**/*.test.js"`\
+To run all online http test: `"test:online:http": "mocha modules/**/online/http/*.test.js"`\
+To run all online unit test: `"test:online:unit": "mocha modules/**/online/unit/*.test.js"`
+
+## Running Project Locally
+You can use this command `yarn run serve` or `npm run serve`
