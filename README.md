@@ -92,12 +92,15 @@ command:\
 ```
 
 ## Manual Deployment
-To deploy firebase function or hosting, you can use these command\
+To deploy firebase function or hosting, we can use these command\
 deploy only function: `firebase deploy --only function`\
 deploy only hosting: `firebase deploy --only hosting`\
 deploy function and hosting: `firebase deploy`
 
 ## Testing
+When we create a pull request into master, the command `test:ci` will be running in GitHub action.
+When we push the update to master, the command `test:ci` and firebase deployment will be running in GitHub action.
+
 To run the test, you use these command\
 To run all test: `"test:all": "mocha modules/*.test.js"`\
 To run in ci cd: `"test:ci": "npm install && npm run test:offline"`\
@@ -109,4 +112,4 @@ To run all online http test: `"test:online:http": "mocha modules/**/online/http/
 To run all online unit test: `"test:online:unit": "mocha modules/**/online/unit/*.test.js"`
 
 ## Running Project Locally
-You can use this command `yarn run serve` or `npm run serve`
+We can use this command to run project locally `yarn run serve` or `npm run serve`
