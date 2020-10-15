@@ -101,7 +101,7 @@ deploy function and hosting: `firebase deploy`
 When we create a pull request into master, the command `test:ci` will be running in GitHub action.
 When we push the update to master, the command `test:ci` and firebase deployment will be running in GitHub action.
 
-To run the test, you use these command\
+To run the test, we can use these command\
 To run all test: `"test:all": "mocha modules/*.test.js"`\
 To run in ci cd: `"test:ci": "npm install && npm run test:offline"`\
 To run all offline test: `"test:offline": "mocha modules/**/offline/**/*.test.js"`\
