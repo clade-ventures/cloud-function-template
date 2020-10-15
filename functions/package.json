@@ -8,14 +8,14 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "test:all": "mocha modules/*.test.js",
-    "test:ci": "npm install && npm run test:offline",
-    "test:offline": "mocha modules/**/offline/**/*.test.js",
-    "test:offline:http": "mocha modules/**/offline/http/*.test.js",
-    "test:offline:unit": "mocha modules/**/offline/unit/*.test.js",
-    "test:online": "mocha modules/**/offline/**/*.test.js",
-    "test:online:http": "mocha modules/**/offline/http/*.test.js",
-    "test:online:unit": "mocha modules/**/offline/unit/*.test.js"
+    "test:all": "mocha modules/*.test.js --exit",
+    "test:ci": "npm install && npm run test:offline --exit",
+    "test:offline": "mocha modules/**/offline/**/*.test.js --exit",
+    "test:offline:http": "mocha modules/**/offline/http/*.test.js --exit",
+    "test:offline:unit": "mocha modules/**/offline/unit/*.test.js --exit",
+    "test:online": "mocha modules/**/offline/**/*.test.js --exit",
+    "test:online:http": "mocha modules/**/offline/http/*.test.js --exit",
+    "test:online:unit": "mocha modules/**/offline/unit/*.test.js --exit"
   },
   "engines": {
     "node": "10"
