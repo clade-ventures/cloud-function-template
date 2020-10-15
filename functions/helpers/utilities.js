@@ -1,4 +1,18 @@
 const _ = require('lodash');
+const responses = require('./response');
+
+module.exports.errorHandler = (err, res) => {
+  const appErrors = [];
+  const data = err.errors;
+  if (Array.isArray(data)) {
+    for (let i = 0; i < data.length; i += 1) {
+      appErrors.push(data[i].data);
+    }
+  } else {
+    appErrors.push(data ? data.data : err.message);
+  }
+  return responses.httpResponse.errorHandler(res, err.status || 500, appErrors);
+};
 
 module.exports.validateEmail = (email) => {
   const re = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
